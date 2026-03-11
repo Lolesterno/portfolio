@@ -19,7 +19,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    name: 'DoctorEn.com',
+    name: 'DoctorOne.com',
     tagline: 'Plataforma de Teleconsulta Médica',
     description: 'Plataforma web completa de telemedicina que conecta pacientes con médicos especializados. Sistema de agendamiento en línea, videoconsultas, historias clínicas digitales y pagos integrados.',
     tech: ['PHP', 'Laravel', 'FilamentPHP', 'MySQL', 'Vue.js', 'Docker'],
@@ -27,7 +27,7 @@ const projects: Project[] = [
     color: '#00ffff',
     bgColor: 'rgba(0,255,255,0.05)',
     icon: '🩺',
-    url: 'https://doctoren.com',
+    url: 'https://doctorone.com',
     highlights: [
       'Agendamiento en línea con médicos especializados',
       'Historias clínicas digitales seguras',
@@ -57,7 +57,7 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    name: 'Romodoc Telemedicina',
+    name: 'Romodoc TeleMed',
     tagline: 'App Telemedicina para EE.UU.',
     description: 'Aplicación de telemedicina desarrollada para Nu Image Medical, orientada al mercado estadounidense. Soporte multitenant para marca blanca con integraciones a servicios de terceros via API.',
     tech: ['PHP', 'Laravel Nova v4', 'MySQL', 'Vue.js', 'API Integrations'],

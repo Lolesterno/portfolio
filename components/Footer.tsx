@@ -8,9 +8,9 @@ export default function Footer() {
       }}
     >
       {/* Pixel row decoration */}
-      <div className="flex justify-center mb-6">
+      {/* <div className="flex justify-center mb-6">
         <div className="flex gap-0">
-          {Array.from({ length: 30 }).map((_, i) => (
+          {Array.from({ length: 20 }).map((_, i) => (
             <div
               key={i}
               className="w-5 h-2"
@@ -21,7 +21,7 @@ export default function Footer() {
             />
           ))}
         </div>
-      </div>
+      </div> */}
 
       <div style={{ fontFamily: '"Press Start 2P"', fontSize: '9px', color: '#00ffff', textShadow: '0 0 10px #00ffff', marginBottom: '8px' }}>
         NC.DEV
