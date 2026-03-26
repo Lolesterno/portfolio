@@ -18,10 +18,29 @@ type Job = {
 
 const jobs: Job[] = [
   {
+    title: 'Desarrollador Ecommerce - Gestion Cloud y Workspace Google',
+    company: 'Amapola Tech SAS - Digitalistics Media',
+    location: 'Bogotá - Colombia',
+    period: 'Jun. 2025 - Actualmente',
+    duration: '10 meses',
+    type: 'onsite',
+    description: [
+      'Desarrollo y mejoras de diferentes ecommerce dedicados a la prestación de servicios de psicología en línea (tupsicologo.com) y prestancion de atención medica inmediata de triage 4 y 5 (doctorone.com).',
+      'Integraciones con pasarelas de pagos locales e internacionales (Duna ecuador, Mercadopago Colombia, Stripe) en las dos plataformas.',
+      'Migracion y consolidación de nuevas API Gateway de desarrollo para mejoras en las experiencias de integraciones futuras y nuevos proyectos.',
+      'Administración interna de sitios web con wordpress y Shopify, ',
+      'Gestion de workspace de Google gracias a GCP para el despliegue y automatización de despliegues mediante pipelines. Gestion de Google Workspace para la gestión empresarial de correo electrónico y ambiente de trabajo con Google.',
+    ],
+    tech: ['PHP', 'Laravel v10 - v12', 'Google Workspace', 'MySQL', 'Next.Js', 'Google Workspace'],
+    color: '#ffffff',
+    icon: '🏥',
+    level: 11,
+  },
+  {
     title: 'Senior PHP Developer',
     company: 'Nu Image Medical',
     location: 'Tampa, Florida, EE.UU.',
-    period: 'Nov. 2024 - Actualmente',
+    period: 'Nov. 2024 - Jun. 2025',
     duration: '7 meses',
     type: 'remote',
     description: [
@@ -38,7 +57,7 @@ const jobs: Job[] = [
     title: 'Desarrollador Full Stack',
     company: 'Xorex de Colombia',
     location: 'Bogotá, Colombia',
-    period: 'Oct. 2024 - Actualmente',
+    period: 'Oct. 2024 - Jun. 2025',
     duration: '7 meses',
     type: 'hybrid',
     description: [
