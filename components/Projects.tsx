@@ -1,6 +1,13 @@
 'use client'
 
+import Image, { StaticImageData } from 'next/image'
 import { useEffect, useRef, useState } from 'react'
+
+import LogoTupsi from "@/assets/portfolio/logos/tupsilogo.webp";
+import DoctorOneLogo from "@/assets/portfolio/logos/doctoronelogo.svg";
+import RomodocLogo from "@/assets/portfolio/logos/romodoclogo.avif";
+import MeltecLogo from "@/assets/portfolio/logos/melteclogo.png";
+import LaravelLogo from '@/assets/portfolio/logos/laravellogo.svg'
 
 type Project = {
   name: string
@@ -10,7 +17,7 @@ type Project = {
   category: string
   color: string
   bgColor: string
-  icon: string
+  icon: StaticImageData
   url?: string
   highlights: string[]
   status: 'LIVE' | 'WIP' | 'COMPLETED'
@@ -26,7 +33,7 @@ const projects: Project[] = [
     category: 'HEALTH TECH',
     color: '#00ffff',
     bgColor: 'rgba(0,255,255,0.05)',
-    icon: '🩺',
+    icon: DoctorOneLogo,
     url: 'https://doctorone.com',
     highlights: [
       'Agendamiento en línea con médicos especializados',
@@ -41,11 +48,11 @@ const projects: Project[] = [
     name: 'TuPsicologo.com',
     tagline: 'Conexión con Psicólogos Profesionales',
     description: 'Plataforma especializada en salud mental que permite a usuarios encontrar y agendar sesiones con psicólogos certificados. Incluye perfiles de especialistas, reseñas verificadas y sistema de pagos.',
-    tech: ['PHP', 'Laravel', 'FilamentPHP', 'PostgreSQL', 'React', 'Docker'],
+    tech: ['PHP', 'Laravel', 'Django', 'PostgreSQL', 'React', 'Docker'],
     category: 'MENTAL HEALTH',
     color: '#ff00aa',
     bgColor: 'rgba(255,0,170,0.05)',
-    icon: '🧠',
+    icon: LogoTupsi,
     url: 'https://tupsicologo.com',
     highlights: [
       'Directorio de psicólogos certificados',
@@ -64,7 +71,7 @@ const projects: Project[] = [
     category: 'TELEHEALTH USA',
     color: '#ffd700',
     bgColor: 'rgba(255,215,0,0.05)',
-    icon: '🏥',
+    icon: RomodocLogo,
     highlights: [
       'Arquitectura multitenant para marca blanca',
       'Integraciones API con servicios médicos de EE.UU.',
@@ -81,7 +88,7 @@ const projects: Project[] = [
     category: 'ENTERPRISE',
     color: '#8b00ff',
     bgColor: 'rgba(139,0,255,0.05)',
-    icon: '💼',
+    icon: MeltecLogo,
     highlights: [
       'Módulos completos de contabilidad y ventas',
       'CRM integrado con Bitrix24',
@@ -98,7 +105,7 @@ const projects: Project[] = [
     category: 'TOOLING',
     color: '#ff6b00',
     bgColor: 'rgba(255,107,0,0.05)',
-    icon: '⚙️',
+    icon: LaravelLogo,
     highlights: [
       'Módulos reutilizables para proyectos empresariales',
       'Integración con SAP y Flokzu',
@@ -115,7 +122,7 @@ const projects: Project[] = [
     category: 'MIGRATION',
     color: '#00ff41',
     bgColor: 'rgba(0,255,65,0.05)',
-    icon: '🔄',
+    icon: LaravelLogo,
     highlights: [
       'Migración de sistema legado a Angular',
       'Despliegue containerizado con Docker en AWS EC2',
@@ -224,7 +231,8 @@ export default function Projects() {
                 {/* Header */}
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-2">
-                    <span className="text-3xl">{project.icon}</span>
+                    <Image src={project.icon} alt={`${project.name}-Logo`} className='max-w-40' />
+                    
                     <div>
                       <div
                         style={{
