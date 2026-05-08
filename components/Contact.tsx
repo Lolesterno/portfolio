@@ -35,15 +35,33 @@ const contactInfo = [
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [formError, setFormError] = useState<string | null>(null)
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
 
   const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault()
     setSending(true)
-    await new Promise(r => setTimeout(r, 1500))
-    setSending(false)
-    setSent(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setFormError(data.error ?? 'Error desconocido')
+        return
+      }
+
+      setSent(true)
+    } catch {
+      setFormError('No se pudo conectar. Verifica tu conexión.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -138,7 +156,7 @@ export default function Contact() {
           </div>
 
           {/* Right: Form */}
-          {/* <div
+          <div
             className="p-6"
             style={{
               border: '2px solid #1a1a3e',
@@ -248,7 +266,7 @@ export default function Contact() {
                 </button>
               </div>
             )}
-          </div> */}
+          </div>
         </div>
       </div>
     </section>
