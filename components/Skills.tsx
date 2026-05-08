@@ -119,7 +119,7 @@ export default function Skills() {
             ⚡ SKILLS
           </div>
           <div className="flex-1 h-0.5" style={{ background: 'linear-gradient(90deg, #00ff41, transparent)' }} />
-          <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#4a4a7a' }}>STAGE 04</div>
+          <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#ebe8e8' }}>STAGE 04</div>
         </div>
 
         {/* Category selector */}
@@ -212,7 +212,7 @@ export default function Skills() {
                     />
                   </div>
                   <div className="flex justify-end mt-1">
-                    <span style={{ fontFamily: '"Press Start 2P"', fontSize: '6px', color: '#4a4a7a' }}>
+                    <span style={{ fontFamily: '"Press Start 2P"', fontSize: '6px', color: '#ebe8e8' }}>
                       {skill.level}%
                     </span>
                   </div>

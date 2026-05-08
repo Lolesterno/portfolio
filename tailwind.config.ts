@@ -23,7 +23,7 @@ const config: Config = {
           red: '#ff0033',
           blue: '#0066ff',
           white: '#f0f0ff',
-          gray: '#4a4a7a',
+          gray: '#ebe8e8',
         },
       },
       fontFamily: {

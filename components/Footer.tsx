@@ -26,7 +26,7 @@ export default function Footer() {
       <div style={{ fontFamily: '"Press Start 2P"', fontSize: '9px', color: '#00ffff', textShadow: '0 0 10px #00ffff', marginBottom: '8px' }}>
         NC.DEV
       </div>
-      <div style={{ fontFamily: '"Share Tech Mono"', fontSize: '12px', color: '#4a4a7a', marginBottom: '4px' }}>
+      <div style={{ fontFamily: '"Share Tech Mono"', fontSize: '12px', color: '#ebe8e8', marginBottom: '4px' }}>
         José Nicolás Cuadros Silva — Senior PHP Developer
       </div>
       <div style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#2a2a5a', marginBottom: '16px' }}>

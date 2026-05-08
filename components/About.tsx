@@ -48,7 +48,7 @@ export default function About() {
             👤 SOBRE MÍ
           </div>
           <div className="flex-1 h-0.5" style={{ background: 'linear-gradient(90deg, #00ffff, transparent)' }} />
-          <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#4a4a7a' }}>STAGE 01</div>
+          <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#ebe8e8' }}>STAGE 01</div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -105,7 +105,7 @@ export default function About() {
                   fontFamily: '"Share Tech Mono"',
                   fontSize: '14px',
                   lineHeight: '1.8',
-                  color: '#a0a0c0',
+                  color: '#edede4',
                 }}
               >
                 <span style={{ color: '#ffd700' }}>{'> '}</span>
@@ -119,7 +119,7 @@ export default function About() {
                   fontFamily: '"Share Tech Mono"',
                   fontSize: '14px',
                   lineHeight: '1.8',
-                  color: '#a0a0c0',
+                  color: '#edede4',
                 }}
               >
                 <span style={{ color: '#00ffff' }}>{'> '}</span>
@@ -133,7 +133,7 @@ export default function About() {
                   fontFamily: '"Share Tech Mono"',
                   fontSize: '14px',
                   lineHeight: '1.8',
-                  color: '#a0a0c0',
+                  color: '#edede4',
                 }}
               >
                 <span style={{ color: '#ff00aa' }}>{'> '}</span>
@@ -186,7 +186,7 @@ export default function About() {
                 {stats.map((stat, i) => (
                   <div key={stat.label}>
                     <div className="flex justify-between mb-1">
-                      <span style={{ fontFamily: '"Share Tech Mono"', fontSize: '12px', color: '#a0a0c0' }}>{stat.label}</span>
+                      <span style={{ fontFamily: '"Share Tech Mono"', fontSize: '12px', color: '#edede4' }}>{stat.label}</span>
                       <span style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: stat.color }}>
                         {bars[stat.label] ?? 0}%
                       </span>
@@ -211,9 +211,9 @@ export default function About() {
               {/* XP Bar */}
               <div className="mt-8 pt-6" style={{ borderTop: '1px solid #1a1a3e' }}>
                 <div className="flex justify-between mb-2">
-                  <span style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#4a4a7a' }}>LVL 6</span>
+                  <span style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#ebe8e8' }}>LVL 6</span>
                   <span style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#ffd700' }}>XP: 8450 / 10000</span>
-                  <span style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#4a4a7a' }}>LVL 7</span>
+                  <span style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#ebe8e8' }}>LVL 7</span>
                 </div>
                 <div style={{ height: '20px', border: '2px solid #ffd700', background: '#0a0a0f', position: 'relative', overflow: 'hidden' }}>
                   <div

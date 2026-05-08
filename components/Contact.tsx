@@ -77,7 +77,7 @@ export default function Contact() {
             📡 CONTACTO
           </div>
           <div className="flex-1 h-0.5" style={{ background: 'linear-gradient(90deg, #ff6b00, transparent)' }} />
-          <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#4a4a7a' }}>STAGE 06</div>
+          <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#ebe8e8' }}>STAGE 06</div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -87,7 +87,7 @@ export default function Contact() {
               <div style={{ fontFamily: '"Press Start 2P"', fontSize: '11px', color: '#f0f0ff', marginBottom: '12px' }}>
                 ¿LISTO PARA COLABORAR?
               </div>
-              <p style={{ fontFamily: '"Share Tech Mono"', fontSize: '14px', color: '#6a6a9a', lineHeight: '1.8' }}>
+              <p style={{ fontFamily: '"Share Tech Mono"', fontSize: '14px', color: '#f0f0f0', lineHeight: '1.8' }}>
                 Disponible para proyectos freelance, posiciones senior y colaboraciones técnicas. Experiencia en equipos remotos internacionales.
               </p>
             </div>
@@ -112,7 +112,7 @@ export default function Contact() {
                     >
                       <span className="text-xl">{info.icon}</span>
                       <div>
-                        <div style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#4a4a7a', marginBottom: '2px' }}>{info.label}</div>
+                        <div style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#ebe8e8', marginBottom: '2px' }}>{info.label}</div>
                         <div style={{ fontFamily: '"Share Tech Mono"', fontSize: '13px', color: info.color, textDecoration: 'underline' }}>
                           {info.value}
                         </div>
@@ -122,7 +122,7 @@ export default function Contact() {
                     <div className="flex items-center gap-3">
                       <span className="text-xl">{info.icon}</span>
                       <div>
-                        <div style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#4a4a7a', marginBottom: '2px' }}>{info.label}</div>
+                        <div style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#ebe8e8', marginBottom: '2px' }}>{info.label}</div>
                         <div style={{ fontFamily: '"Share Tech Mono"', fontSize: '13px', color: info.color }}>{info.value}</div>
                       </div>
                     </div>
@@ -147,7 +147,7 @@ export default function Contact() {
                 />
                 <div>
                   <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#00ff41' }}>DISPONIBLE</div>
-                  <div style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#4a4a7a', marginTop: '2px' }}>
+                  <div style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#ebe8e8', marginTop: '2px' }}>
                     Abierto a nuevas oportunidades
                   </div>
                 </div>
@@ -171,7 +171,7 @@ export default function Contact() {
 
                 <div className="space-y-5">
                   <div>
-                    <label style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#4a4a7a', display: 'block', marginBottom: '6px' }}>
+                    <label style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#ebe8e8', display: 'block', marginBottom: '6px' }}>
                       NOMBRE
                     </label>
                     <input
@@ -191,7 +191,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#4a4a7a', display: 'block', marginBottom: '6px' }}>
+                    <label style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#ebe8e8', display: 'block', marginBottom: '6px' }}>
                       EMAIL
                     </label>
                     <input
@@ -211,7 +211,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#4a4a7a', display: 'block', marginBottom: '6px' }}>
+                    <label style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#ebe8e8', display: 'block', marginBottom: '6px' }}>
                       MENSAJE
                     </label>
                     <textarea
@@ -238,7 +238,7 @@ export default function Contact() {
                       fontFamily: '"Press Start 2P"',
                       fontSize: '9px',
                       color: '#0a0a0f',
-                      background: sending ? '#4a4a7a' : '#ff6b00',
+                      background: sending ? '#ebe8e8' : '#ff6b00',
                       border: 'none',
                       cursor: sending ? 'wait' : 'pointer',
                       boxShadow: sending ? 'none' : '0 0 20px rgba(255,107,0,0.4)',
@@ -254,7 +254,7 @@ export default function Contact() {
                 <div style={{ fontFamily: '"Press Start 2P"', fontSize: '12px', color: '#00ff41', textShadow: '0 0 10px #00ff41', marginBottom: '8px' }}>
                   ¡MENSAJE ENVIADO!
                 </div>
-                <div style={{ fontFamily: '"Share Tech Mono"', fontSize: '13px', color: '#6a6a9a' }}>
+                <div style={{ fontFamily: '"Share Tech Mono"', fontSize: '13px', color: '#f0f0f0' }}>
                   Te responderé lo antes posible. ¡Gracias por contactarme!
                 </div>
                 <button

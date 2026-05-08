@@ -121,7 +121,7 @@ export default function Hero() {
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
 
         {/* Game title */}
-        <div className="mb-4" style={{ fontFamily: '"Press Start 2P"', fontSize: 'clamp(8px, 2vw, 12px)', color: '#4a4a7a', letterSpacing: '4px' }}>
+        <div className="mb-4" style={{ fontFamily: '"Press Start 2P"', fontSize: 'clamp(8px, 2vw, 12px)', color: '#ebe8e8', letterSpacing: '4px' }}>
           ▶ PLAYER 1 SELECT ◀
         </div>
 
@@ -187,7 +187,7 @@ export default function Hero() {
                 minWidth: '100px',
               }}
             >
-              <div style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#4a4a7a', marginBottom: '4px' }}>{stat.label}</div>
+              <div style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#ebe8e8', marginBottom: '4px' }}>{stat.label}</div>
               <div style={{ fontFamily: '"Press Start 2P"', fontSize: '10px', color: stat.color, textShadow: `0 0 8px ${stat.color}` }}>{stat.value}</div>
             </div>
           ))}
@@ -270,7 +270,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 right-8 animate-bounce-pixel" style={{ fontFamily: '"Press Start 2P"', fontSize: '10px', color: '#4a4a7a' }}>
+      <div className="absolute bottom-8 right-8 animate-bounce-pixel" style={{ fontFamily: '"Press Start 2P"', fontSize: '10px', color: '#ebe8e8' }}>
         ↓ SCROLL
       </div>
     </section>

@@ -202,7 +202,7 @@ export default function Experience() {
             ⚔️ EXPERIENCIA
           </div>
           <div className="flex-1 h-0.5" style={{ background: 'linear-gradient(90deg, #ffd700, transparent)' }} />
-          <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#4a4a7a' }}>STAGE 02</div>
+          <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#ebe8e8' }}>STAGE 02</div>
         </div>
 
         {/* Timeline */}
@@ -258,19 +258,19 @@ export default function Experience() {
                           {job.company}
                         </div>
                         <div className="flex flex-wrap gap-3 mt-1">
-                          <span style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#4a4a7a' }}>
+                          <span style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#ebe8e8' }}>
                             📍 {job.location}
                           </span>
-                          <span style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#4a4a7a' }}>
+                          <span style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#ebe8e8' }}>
                             📅 {job.period}
                           </span>
                           <span
                             style={{
                               fontFamily: '"Press Start 2P"',
                               fontSize: '7px',
-                              color: job.type === 'remote' ? '#00ff41' : job.type === 'hybrid' ? '#ffd700' : '#4a4a7a',
+                              color: job.type === 'remote' ? '#00ff41' : job.type === 'hybrid' ? '#ffd700' : '#ebe8e8',
                               padding: '2px 6px',
-                              border: `1px solid ${job.type === 'remote' ? '#00ff41' : job.type === 'hybrid' ? '#ffd700' : '#4a4a7a'}`,
+                              border: `1px solid ${job.type === 'remote' ? '#00ff41' : job.type === 'hybrid' ? '#ffd700' : '#ebe8e8'}`,
                             }}
                           >
                             {job.type.toUpperCase()}
@@ -280,11 +280,11 @@ export default function Experience() {
                     </div>
 
                     <div className="flex-shrink-0 text-right">
-                      <div style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#4a4a7a' }}>{job.duration}</div>
+                      <div style={{ fontFamily: '"Press Start 2P"', fontSize: '7px', color: '#ebe8e8' }}>{job.duration}</div>
                       <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: job.color, marginTop: '4px' }}>
                         LVL {job.level}
                       </div>
-                      <div style={{ fontFamily: '"Press Start 2P"', fontSize: '10px', color: '#4a4a7a', marginTop: '4px' }}>
+                      <div style={{ fontFamily: '"Press Start 2P"', fontSize: '10px', color: '#ebe8e8', marginTop: '4px' }}>
                         {activeJob === i ? '▲' : '▼'}
                       </div>
                     </div>
@@ -300,7 +300,7 @@ export default function Experience() {
                         {job.description.map((d, j) => (
                           <li key={j} className="flex gap-2">
                             <span style={{ color: job.color, flexShrink: 0 }}>▶</span>
-                            <span style={{ fontFamily: '"Share Tech Mono"', fontSize: '12px', color: '#a0a0c0', lineHeight: '1.6' }}>{d}</span>
+                            <span style={{ fontFamily: '"Share Tech Mono"', fontSize: '12px', color: '#edede4', lineHeight: '1.6' }}>{d}</span>
                           </li>
                         ))}
                       </ul>

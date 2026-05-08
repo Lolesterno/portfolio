@@ -24,6 +24,44 @@ type Project = {
   featured?: boolean
 }
 
+type GitHubRepo = {
+  id: number
+  name: string
+  description: string | null
+  url: string
+  updatedAt: string
+  language: string | null
+  stars: number
+}
+
+
+// REPOSITORIOS GITHUB ----------------------------------
+
+const languageColors: Record<string, string> = {
+  TypeScript: '#3178c6',
+  JavaScript: '#f1e05a',
+  PHP: '#777bb4',
+  Python: '#3572A5',
+  Java: '#b07219',
+  CSS: '#563d7c',
+  HTML: '#e34c26',
+  Vue: '#41b883',
+  default: '#ebe8e8',
+}
+
+function formatRelativeDate(iso: string): string {
+  const diff = Date.now() - new Date(iso).getTime()
+  const days = Math.floor(diff / 86400000)
+  if (days === 0) return 'HOY'
+  if (days === 1) return 'AYER'
+  if (days < 30) return `HACE ${days}D`
+  const months = Math.floor(days / 30)
+  if (months < 12) return `HACE ${months}M`
+  return `HACE ${Math.floor(months / 12)}A`
+}
+
+// PROYECTOS TRABAJADOS -------------------------------------
+
 const projects: Project[] = [
   {
     name: 'DoctorOne.com',
@@ -136,13 +174,26 @@ const projects: Project[] = [
 const statusColors: Record<string, string> = {
   LIVE: '#00ff41',
   WIP: '#ffd700',
-  COMPLETED: '#4a4a7a',
+  COMPLETED: '#ebe8e8',
 }
 
 export default function Projects() {
   const [visible, setVisible] = useState(false)
   const [selected, setSelected] = useState<number | null>(null)
   const [filter, setFilter] = useState<'ALL' | 'LIVE' | 'FEATURED'>('ALL')
+
+  const [repos, setRepos] = useState<GitHubRepo[]>([])
+  const [reposLoading, setReposLoading] = useState(true)
+  const [reposError, setReposError] = useState(false);
+
+  useEffect(() => {
+    fetch('/api/github-repos')
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(setRepos)
+      .catch(() => setReposError(true))
+      .finally(() => setReposLoading(false))
+  }, [])
+
   const ref = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -174,7 +225,7 @@ export default function Projects() {
             🎮 PROYECTOS
           </div>
           <div className="flex-1 h-0.5" style={{ background: 'linear-gradient(90deg, #ff00aa, transparent)' }} />
-          <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#4a4a7a' }}>STAGE 03</div>
+          <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#ebe8e8' }}>STAGE 03</div>
         </div>
 
         {/* Filter buttons */}
@@ -185,9 +236,9 @@ export default function Projects() {
               onClick={() => setFilter(f)}
               className="arcade-btn"
               style={{
-                color: filter === f ? '#0a0a0f' : '#4a4a7a',
+                color: filter === f ? '#0a0a0f' : '#ebe8e8',
                 background: filter === f ? '#ff00aa' : 'transparent',
-                borderColor: filter === f ? '#ff00aa' : '#4a4a7a',
+                borderColor: filter === f ? '#ff00aa' : '#ebe8e8',
                 boxShadow: filter === f ? '0 0 15px #ff00aa' : 'none',
                 fontSize: '7px',
               }}
@@ -232,7 +283,7 @@ export default function Projects() {
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-2">
                     <Image src={project.icon} alt={`${project.name}-Logo`} className='max-w-40' />
-                    
+
                     <div>
                       <div
                         style={{
@@ -284,7 +335,7 @@ export default function Projects() {
                   {project.tagline}
                 </div>
 
-                <p style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#6a6a9a', lineHeight: '1.6', marginBottom: '12px' }}>
+                <p style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#f0f0f0', lineHeight: '1.6', marginBottom: '12px' }}>
                   {project.description}
                 </p>
 
@@ -298,7 +349,7 @@ export default function Projects() {
                       {project.highlights.map((h, j) => (
                         <li key={j} className="flex gap-2">
                           <span style={{ color: project.color, fontSize: '10px', flexShrink: 0 }}>▶</span>
-                          <span style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#a0a0c0' }}>{h}</span>
+                          <span style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#edede4' }}>{h}</span>
                         </li>
                       ))}
                     </ul>
@@ -349,7 +400,7 @@ export default function Projects() {
                     style={{
                       fontFamily: '"Press Start 2P"',
                       fontSize: '7px',
-                      color: '#4a4a7a',
+                      color: '#ebe8e8',
                       border: '1px solid #1a1a3e',
                     }}
                     onClick={() => setSelected(selected === i ? null : i)}
@@ -363,6 +414,176 @@ export default function Projects() {
               <div style={{ height: '3px', background: project.color, boxShadow: `0 0 8px ${project.color}` }} />
             </div>
           ))}
+        </div>
+
+        {/* Github Repos */}
+        <div className="mt-20">
+          <div className="flex items-center gap-4 mb-8">
+            <div
+              style={{
+                fontFamily: '"Press Start 2P"',
+                fontSize: 'clamp(10px, 2vw, 16px)',
+                color: '#00ff41',
+                textShadow: '0 0 20px #00ff41',
+              }}
+            >
+              🐙 GITHUB REPOS
+            </div>
+            <div className="flex-1 h-0.5" style={{ background: 'linear-gradient(90deg, #00ff41, transparent)' }} />
+            <a
+              href="https://github.com/Lolesterno"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: '"Press Start 2P"',
+                fontSize: '7px',
+                color: '#00ff41',
+                border: '1px solid #00ff41',
+                padding: '4px 10px',
+                boxShadow: '0 0 10px #00ff4140',
+              }}
+            >
+              VER TODO →
+            </a>
+          </div>
+
+          {reposLoading && (
+            <div
+              style={{ fontFamily: '"Share Tech Mono"', fontSize: '12px', color: '#ebe8e8' }}
+              className="text-center py-12"
+            >
+              {'> FETCHING REPOS...'}
+            </div>
+          )}
+          {reposError && (
+            <div
+              style={{ fontFamily: '"Share Tech Mono"', fontSize: '12px', color: '#ff4444' }}
+              className="text-center py-12"
+            >
+              {'> ERROR: GITHUB API UNREACHABLE'}
+            </div>
+          )}
+
+          {!reposLoading && !reposError && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {repos.map((repo, i) => (
+                <a
+                  key={repo.id}
+                  href={repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block group transition-all duration-300 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    }`}
+                  style={{
+                    transitionDelay: `${i * 60}ms`,
+                    border: '1px solid #1a1a3e',
+                    background: 'rgba(0,255,65,0.03)',
+                    padding: '16px',
+                    textDecoration: 'none',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = '#00ff41'
+                    e.currentTarget.style.boxShadow = '0 0 15px #00ff4130'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = '#1a1a3e'
+                    e.currentTarget.style.boxShadow = 'none'
+                  }}
+                >
+                  {/* Nombre del repo */}
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <span
+                      style={{
+                        fontFamily: '"Orbitron"',
+                        fontSize: '12px',
+                        fontWeight: 700,
+                        color: '#00ff41',
+                        wordBreak: 'break-all',
+                      }}
+                    >
+                      {repo.name}
+                    </span>
+                    {repo.stars > 0 && (
+                      <span
+                        style={{
+                          fontFamily: '"Share Tech Mono"',
+                          fontSize: '10px',
+                          color: '#ffd700',
+                          flexShrink: 0,
+                        }}
+                      >
+                        ★ {repo.stars}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Descripción */}
+                  <p
+                    style={{
+                      fontFamily: '"Share Tech Mono"',
+                      fontSize: '11px',
+                      color: '#f0f0f0',
+                      lineHeight: '1.5',
+                      minHeight: '34px',
+                      marginBottom: '12px',
+                    }}
+                  >
+                    {repo.description ?? '// sin descripción'}
+                  </p>
+
+                  {/* Footer: lenguaje + fecha */}
+                  <div className="flex items-center justify-between">
+                    {repo.language ? (
+                      <span
+                        style={{
+                          fontFamily: '"Share Tech Mono"',
+                          fontSize: '10px',
+                          color: languageColors[repo.language] ?? languageColors.default,
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '5px',
+                        }}
+                      >
+                        <span
+                          style={{
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '50%',
+                            background: languageColors[repo.language] ?? languageColors.default,
+                            display: 'inline-block',
+                            boxShadow: `0 0 6px ${languageColors[repo.language] ?? languageColors.default}`,
+                          }}
+                        />
+                        {repo.language}
+                      </span>
+                    ) : (
+                      <span />
+                    )}
+                    <span
+                      style={{
+                        fontFamily: '"Press Start 2P"',
+                        fontSize: '6px',
+                        color: '#ebe8e8',
+                      }}
+                    >
+                      {formatRelativeDate(repo.updatedAt)}
+                    </span>
+                  </div>
+
+                  {/* Barra inferior */}
+                  <div
+                    className="mt-3 transition-all duration-300"
+                    style={{
+                      height: '2px',
+                      background: languageColors[repo.language ?? ''] ?? '#1a1a3e',
+                      opacity: 0.5,
+                    }}
+                  />
+                </a>
+              ))}
+            </div>
+          )}
+
         </div>
       </div>
     </section>

@@ -72,7 +72,7 @@ export default function Education() {
             📚 EDUCACIÓN
           </div>
           <div className="flex-1 h-0.5" style={{ background: 'linear-gradient(90deg, #8b00ff, transparent)' }} />
-          <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#4a4a7a' }}>STAGE 05</div>
+          <div style={{ fontFamily: '"Press Start 2P"', fontSize: '8px', color: '#ebe8e8' }}>STAGE 05</div>
         </div>
 
         {/* Achievement unlocked style */}
@@ -131,8 +131,8 @@ export default function Education() {
                         style={{
                           fontFamily: '"Press Start 2P"',
                           fontSize: '7px',
-                          color: edu.status === 'EN CURSO' ? '#00ff41' : '#4a4a7a',
-                          border: `1px solid ${edu.status === 'EN CURSO' ? '#00ff41' : '#4a4a7a'}`,
+                          color: edu.status === 'EN CURSO' ? '#00ff41' : '#ebe8e8',
+                          border: `1px solid ${edu.status === 'EN CURSO' ? '#00ff41' : '#ebe8e8'}`,
                           padding: '4px 8px',
                           boxShadow: edu.status === 'EN CURSO' ? '0 0 8px #00ff41' : 'none',
                           flexShrink: 0,
@@ -143,7 +143,7 @@ export default function Education() {
                     </div>
 
                     <div className="flex flex-wrap gap-3 mb-2">
-                      <span style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#4a4a7a' }}>
+                      <span style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#ebe8e8' }}>
                         📅 {edu.period}
                       </span>
                       <span
@@ -159,7 +159,7 @@ export default function Education() {
                       </span>
                     </div>
 
-                    <p style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#6a6a9a', lineHeight: '1.6' }}>
+                    <p style={{ fontFamily: '"Share Tech Mono"', fontSize: '11px', color: '#f0f0f0', lineHeight: '1.6' }}>
                       {edu.description}
                     </p>
                   </div>
@@ -190,7 +190,7 @@ export default function Education() {
           <div style={{ fontFamily: '"Orbitron"', fontSize: '18px', fontWeight: 700, color: '#f0f0ff', marginBottom: '4px' }}>
             Aprendizaje Continuo
           </div>
-          <div style={{ fontFamily: '"Share Tech Mono"', fontSize: '13px', color: '#6a6a9a' }}>
+          <div style={{ fontFamily: '"Share Tech Mono"', fontSize: '13px', color: '#f0f0f0' }}>
             Más de 7 años de formación académica y profesional constante. La educación no termina — cada proyecto es una nueva lección.
           </div>
         </div>

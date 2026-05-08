@@ -64,7 +64,7 @@ export default function Navbar() {
                 style={{
                   fontFamily: '"Press Start 2P"',
                   fontSize: '7px',
-                  color: isActive ? '#00ffff' : '#4a4a7a',
+                  color: isActive ? '#00ffff' : '#ebe8e8',
                   textShadow: isActive ? '0 0 10px #00ffff' : 'none',
                   letterSpacing: '1px',
                 }}
@@ -115,7 +115,7 @@ export default function Navbar() {
               style={{
                 fontFamily: '"Press Start 2P"',
                 fontSize: '8px',
-                color: active === item.href.replace('#', '') ? '#00ffff' : '#4a4a7a',
+                color: active === item.href.replace('#', '') ? '#00ffff' : '#ebe8e8',
                 borderBottom: '1px solid #1a1a3e',
               }}
             >
