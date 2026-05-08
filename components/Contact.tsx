@@ -138,7 +138,7 @@ export default function Contact() {
           </div>
 
           {/* Right: Form */}
-          <div
+          {/* <div
             className="p-6"
             style={{
               border: '2px solid #1a1a3e',
@@ -248,7 +248,7 @@ export default function Contact() {
                 </button>
               </div>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
