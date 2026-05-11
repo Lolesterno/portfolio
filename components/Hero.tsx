@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
+import GameModal from './GameModal'
 
 const TITLES = [
   'SENIOR PHP DEVELOPER',
@@ -30,6 +31,7 @@ export default function Hero() {
   const [insertCoin, setInsertCoin] = useState(true)
   const [started, setStarted] = useState(false)
   const [konami, setKonami] = useState<string[]>([])
+  const [showGame, setShowGame] = useState(false)
 
   const router = useRouter();
 
@@ -226,7 +228,7 @@ export default function Hero() {
             onClick={
               () => {
                 setStarted(true);
-                router.push('#about')
+                setShowGame(true)
               }
             }
             className="cursor-pointer"
@@ -273,6 +275,8 @@ export default function Hero() {
       <div className="absolute bottom-8 right-8 animate-bounce-pixel" style={{ fontFamily: '"Press Start 2P"', fontSize: '10px', color: '#ebe8e8' }}>
         ↓ SCROLL
       </div>
+
+      <GameModal isOpen={showGame} onClose={() => setShowGame(false)} />
     </section>
   )
 }
