@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { Analytics } from '@vercel/analytics/next'
+
 
 export const metadata: Metadata = {
   title: 'Nicolás Cuadros | Senior Fullstack Developer',
@@ -16,6 +18,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <Analytics />
       </head>
       <body className="antialiased">{children}</body>
     </html>
